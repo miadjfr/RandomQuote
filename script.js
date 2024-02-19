@@ -2,7 +2,7 @@ const apiEl = "https://api.quotable.io/random"
 
 const quoteEl = document.getElementById("quote")
 const btnEl = document.getElementById("btn")
-const writterEl = document.getElementById("writter")
+const authorEl = document.getElementById("author")
 
 async function getquote(){
     const quoteApi = await fetch(apiEl).then((res) => res.json())
@@ -10,10 +10,9 @@ async function getquote(){
     const quoteAuthor = quoteApi.author
 
     quoteEl.innerText = quoteContent
-    writterEl.innerText = quoteAuthor
+    authorEl.innerText = quoteAuthor
 
-    console.log(quoteContent );
-    console.log(quoteAuthor);
+
 }
 
 btnEl.addEventListener("click" , getquote)
